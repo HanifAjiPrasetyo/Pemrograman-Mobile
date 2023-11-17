@@ -17,6 +17,8 @@ class _KonverterSuhuState extends State<KonverterSuhu> {
   double kelvin = 273.15;
   double reamour = 0.0;
 
+  final TextEditingController _controller = TextEditingController();
+
   void _convert() {
     setState(() {
       kelvin = celsius + 273.15;
@@ -41,6 +43,7 @@ class _KonverterSuhuState extends State<KonverterSuhu> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextFormField(
+                controller: _controller,
                 decoration:
                     InputDecoration(labelText: 'Masukkan Suhu dalam Celcius'),
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
